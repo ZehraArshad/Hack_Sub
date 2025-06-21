@@ -26,3 +26,6 @@ async def upload_file(file: UploadFile = File(...)):
         os.remove(file_path)  # Clean up
 
     return {"extracted_text": text or "No text found"}
+
+
+# query through grok
