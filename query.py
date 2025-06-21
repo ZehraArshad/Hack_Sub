@@ -10,12 +10,15 @@ import os
 load_dotenv()
 
 # 1. Init Groq LLM
-llm = init_chat_model("llama3-8b-8192", model_provider="groq")
+groq_key = os.getenv("GROQ_API_KEY")
+# 3. Set it in the environment manually
+# os.environ["GROQ_API_KEY"] = groq_key
+llm = init_chat_model("llama3-8b-8192", model_provider="groq", api_key=groq_key)
 
 # 2. Init Cohere Embeddings + Chroma
 embedding_function = CohereEmbeddings(
     model="embed-english-v3.0",
-    input_type="classification",
+   
     )
 vector_store = Chroma(
     persist_directory="chroma",
