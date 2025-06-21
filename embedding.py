@@ -2,7 +2,6 @@ import cohere
 import os
 from dotenv import load_dotenv
 import numpy as np
-
 # Load environment variables
 load_dotenv()
 api_key = os.getenv("COHERE_API_KEY")
@@ -26,23 +25,23 @@ def main():
         input_type="classification",
         embedding_types=["float"],
     )
-    # response2 = co.embed(
-    #     texts=[word2],
-    #     model="embed-english-v3.0",
-    #     input_type="classification",
-    #     embedding_types=["float"],
-    # )
+
 
     # Extract float embeddings
     embedding1 = response1.embeddings.float[0]
     embedding2 = response1.embeddings.float[1]
 
     # Print vector details
-    print(f"Vector length: {len(embedding1)}")
+    # print(f"Vector length: {len(embedding1)}")
 
     # Cosine similarity
+    # We made our own evaluator; also present in cohere's doc
     similarity = cosine_similarity(embedding1, embedding2)
     print(f"Cosine similarity between '{word1}' and '{word2}': {similarity:.4f}")
+
+
+
+
 
 if __name__ == "__main__":
     main()
