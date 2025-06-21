@@ -1,0 +1,21 @@
+python-dotenv==1.0.1        # For reading environment variables stored in .env file
+langchain==0.2.2
+langchain-community==0.2.3
+
+# GROK: Replace OpenAI Embeddings with Grok-compatible LLM or custom embeddings
+# NOTE: Grok currently lacks a public SDK like OpenAI. Integration might require custom API wrappers.
+# If using a local LLM or Grok-compatible wrapper, include it here:
+
+# Example placeholder for Grok or local LLM client
+# grok-client==0.1.0  # (If a package becomes available)
+# OR use `transformers`, `llama-cpp-python`, etc. depending on setup
+
+unstructured==0.14.4        # Document loading
+chromadb==0.5.0             # Vector storage
+
+# Removed:
+# openai==1.31.1             # ❌ Specific to OpenAI
+# tiktoken==0.7.0            # ❌ Tokenizer for OpenAI models
+
+# Optional: Alternative tokenizer if Grok provides one
+# grok-tokenizer==0.1.0
