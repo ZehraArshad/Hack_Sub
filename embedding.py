@@ -16,8 +16,8 @@ def cosine_similarity(vec1, vec2):
     return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
 
 def main():
-    word1 = "apple"
-    word2 = "iphone"
+    word1 = "samsung"
+    word2 = "macOS"
 
     # Get embeddings
     response1 = co.embed(
