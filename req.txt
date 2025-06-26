@@ -1,0 +1,10 @@
+langchain
+langchain-community
+langchain-cohere
+cohere
+pytesseract
+pillow
+chromadb
+python-dotenv
+pypdf
+langchain-groq

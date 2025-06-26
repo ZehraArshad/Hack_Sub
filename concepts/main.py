@@ -1,5 +1,5 @@
 from fastapi import FastAPI, UploadFile, File
-from ocr_api import call_ocr_space_api
+from concepts.ocr_api import call_ocr_space_api
 import os
 import shutil
 from dotenv import load_dotenv
