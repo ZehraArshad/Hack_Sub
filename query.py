@@ -28,6 +28,7 @@ vector_store = Chroma(
 # 3. Define prompt (template from LangChain Hub or custom)
 PROMPT_TEMPLATE = """
 You are a helpful assistant. Use the context below to answer the question.
+If the answer cannot be found in the context, reply based on your own knowledge.
 
 Context:
 {context}
