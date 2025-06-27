@@ -9,3 +9,7 @@ python-dotenv
 pypdf
 langchain-groq
 qdrant-client
+pymongo[srv]
+python-multipart
+fastapi
+uvicorn
