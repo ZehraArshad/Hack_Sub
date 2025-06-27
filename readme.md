@@ -25,10 +25,11 @@
 ### Next Goals
 
 
-- embed multiple file
-- shift to online vector dbs
-- make this a chatbot that is continued
-- message history not saved
+- embed multiple file ✅
+- shift to online vector dbs ✅
+- make this a chatbot that is continued ✅
+- integrate in nextjs (diff embe for diff users)
+- message history not saved 
 - fix the langchain cohere and langchain-community issue
 
 

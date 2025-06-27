@@ -29,12 +29,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Init MongoDB
-mongo_client = MongoClient(os.getenv("MONGODB_URI"))
-db = mongo_client["medpal"]
-reports_collection = db["reports"]
-
+#  mongo client removed
 # Init Qdrant
 qdrant_client = QdrantClient(
     url=os.getenv("QDRANT_URL"),
