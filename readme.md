@@ -28,7 +28,9 @@
 - embed multiple file
 - shift to online vector dbs
 - make this a chatbot that is continued
+- message history not saved
 - fix the langchain cohere and langchain-community issue
+
 
 
 ### Requirements
