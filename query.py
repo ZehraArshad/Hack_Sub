@@ -1,6 +1,7 @@
 from langchain.chat_models import init_chat_model
 from langchain_cohere import CohereEmbeddings  
-
+from langchain_community.vectorstores.qdrant import Qdrant
+from qdrant_client import QdrantClient
 from langchain_community.vectorstores import Chroma
 from langchain_core.documents import Document
 from langchain.prompts import ChatPromptTemplate
@@ -20,11 +21,19 @@ embedding_function = CohereEmbeddings(
     model="embed-english-v3.0",
    
     )
-vector_store = Chroma(
-    persist_directory="chroma",
-    embedding_function=embedding_function
+
+qdrant_client = QdrantClient(
+    url=os.getenv("QDRANT_URL"),
+    api_key=os.getenv("QDRANT_API_KEY"),
+     prefer_grpc=False  # Required for Qdrant Cloud
 )
 
+vector_store = Qdrant(
+    client=qdrant_client,
+    collection_name="medpal-pdfs",
+    embeddings=embedding_function,
+   
+)
 # 3. Define prompt (template from LangChain Hub or custom)
 PROMPT_TEMPLATE = """
 You are a helpful assistant. Use the context below to answer the question.
