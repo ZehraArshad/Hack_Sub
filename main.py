@@ -63,7 +63,7 @@ def home():
 @app.post("/upload")
 async def upload_pdf(
     file: UploadFile = File(...),
-    user_id: str = Form("123")
+    user_id: str = Form(...)
 ):
     print(f"📥 Received upload from user_id: {user_id}, file: {file.filename}")
     print(qdrant_client.get_collection(COLLECTION_NAME))
