@@ -120,12 +120,13 @@ llm = init_chat_model(
 
 class ChatRequest(BaseModel):
     question: str
+    user_id: str
 
 @app.post("/chat")
 async def chat(body: ChatRequest):
     
     query = body.question
-    # user_id = data.get("user_id")
+    user_id = body.user_id
 
     # if not query or not user_id:
     #     return {"error": "query and user_id are required."}
@@ -137,7 +138,7 @@ async def chat(body: ChatRequest):
         embeddings=EMBEDDINGS,
     )
 
-    docs = vectorstore.similarity_search(query, k=3)
+    docs = vectorstore.similarity_search(query, k=3,filter ={"user_id":user_id})
 
     context = "\n\n".join([doc.page_content for doc in docs])
     prompt_messages = prompt.invoke({"context": context, "question": query})
