@@ -13,3 +13,4 @@ pymongo[srv]
 python-multipart
 fastapi
 uvicorn
+langchain_qdrant
