@@ -154,3 +154,4 @@ async def chat(body: ChatRequest):
         "answer": response.content,
         "chunks_used": len(docs)
     }
+handler = app
