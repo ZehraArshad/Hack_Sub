@@ -155,3 +155,7 @@ async def chat(body: ChatRequest):
         "chunks_used": len(docs)
     }
 handler = app
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))  # fallback if PORT not set
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
