@@ -70,7 +70,7 @@ async def upload_pdf(
     print(qdrant_client.get_collection(COLLECTION_NAME).payload_schema)
 
     contents = await file.read()
-    file_path = f"/tmp/{uuid4()}.pdf"
+    file_path = f"temp_{uuid4()}.pdf"
 
     # Save file temporarily
     with open(file_path, "wb") as f:
