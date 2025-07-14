@@ -55,6 +55,14 @@ qdrant_client.create_payload_index(
     )
     
     )
+
+def get_temp_file_path():
+    # Use /tmp/ in Railway or production-like environments
+    if os.getenv("RAILWAY_ENVIRONMENT") or os.getenv("ENV") == "production":
+        return f"/tmp/{uuid4()}.pdf"
+    else:
+        return f"temp_{uuid4()}.pdf"
+
 # === ROUTES ===
 @app.get("/")
 def home():
@@ -70,7 +78,7 @@ async def upload_pdf(
     print(qdrant_client.get_collection(COLLECTION_NAME).payload_schema)
 
     contents = await file.read()
-    file_path = f"temp_{uuid4()}.pdf"
+    file_path = get_temp_file_path()
 
     # Save file temporarily
     with open(file_path, "wb") as f:
