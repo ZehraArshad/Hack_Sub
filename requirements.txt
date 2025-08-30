@@ -2,9 +2,6 @@ langchain
 langchain-community
 langchain-cohere==0.4.4
 cohere==5.15.0
-pytesseract
-pillow
-chromadb
 python-dotenv
 pypdf
 langchain-groq
@@ -14,4 +11,3 @@ python-multipart
 fastapi
 uvicorn
 langchain_qdrant
-asgiref
