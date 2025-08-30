@@ -1,10 +1,8 @@
 {
-  "functions": {
-    "api/main.py": {
-        
-      "excludeFiles": "{**/*.md,**/.venv/**,**/__pycache__/**,**/.git/**,**/.DS_Store}"
-    }
-  },
+  "version": 2,
+  "builds": [
+    { "src": "api/main.py", "use": "@vercel/python" }
+  ],
   "routes": [
     { "src": "/(.*)", "dest": "api/main.py" }
   ]
