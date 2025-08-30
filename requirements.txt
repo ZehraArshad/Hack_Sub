@@ -3,10 +3,10 @@ langchain-community
 langchain-cohere==0.4.4
 cohere==5.15.0
 python-dotenv
-pypdf
+
 langchain-groq
 qdrant-client
-pymongo[srv]
+
 python-multipart
 fastapi
 uvicorn
