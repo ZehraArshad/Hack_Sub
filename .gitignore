@@ -3,3 +3,6 @@
 /chroma
 __pycache__/
 *.pyc
+.venv/
+*.pyc
+.DS_Store
